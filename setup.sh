@@ -17,6 +17,10 @@ mkfs.fat -F 32 -n boot /dev/nvme0n1p1
 # Mount root filesystem to /mnt
 mount /dev/disk/by-label/nixos /mnt
 
+# Make and Mount /home filesystem within root filesystem on /mnt
+mkdir -p /mnt/home
+mount /dev/disk/by-label/home /mnt/home
+
 # Make and Mount /boot filesystem within root filesystem on /mnt
 mkdir -p /mnt/boot
 mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
