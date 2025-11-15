@@ -23,3 +23,9 @@ mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
 
 # Enable swap if needed
 # swapon /dev/nvme0n1p2
+
+# Generate nixos config
+nixos-generate-config --root /mnt
+
+# Copy hardware config to flakes directory
+cp /mnt/etc/nixos/hardware-configuration.nix ./
