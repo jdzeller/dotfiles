@@ -15,7 +15,10 @@
       nixosConfigurations = {
         gopher = lib.nixosSystem {
           system = "aarch64-linux";
-          modules = [ ./configuration.nix ];
+          modules = [
+            ./configuration.nix
+            ./hardware-configuration.nix
+          ];
       };
     };
   };
