@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Partition Disk
-parted /dev/nvme0n1 -- mklabel gpt
+yes | parted /dev/nvme0n1 -- mklabel gpt
 parted /dev/nvme0n1 -- mkpart ESP fat32 1MB 512MB
 parted /dev/nvme0n1 -- set 1 esp on
 parted /dev/nvme0n1 -- mkpart root ext4 512MB 60%
