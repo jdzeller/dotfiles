@@ -31,8 +31,8 @@ mount -o umask=077 /dev/disk/by-label/boot /mnt/boot
 # Generate nixos config
 nixos-generate-config --root /mnt --show-hardware-config > hardware-configuration.nix
 
-# Copy hardware config to flakes directory
-cp /mnt/etc/nixos/hardware-configuration.nix ./
+# Add hardware-configuration.nix to git repository
+git add ./hardware-configuration.nix
 
 # Start NixOS Install
 nixos-install --flake ./#common
