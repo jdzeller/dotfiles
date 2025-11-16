@@ -13,7 +13,7 @@
       lib = nixpkgs.lib;
     in {
       nixosConfigurations = {
-        gopher = lib.nixosSystem {
+        common = lib.nixosSystem {
           system = "aarch64-linux";
           modules = [ ./configuration.nix ];
       };

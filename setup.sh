@@ -33,3 +33,6 @@ nixos-generate-config --root /mnt --show-hardware-config > hardware-configuratio
 
 # Copy hardware config to flakes directory
 cp /mnt/etc/nixos/hardware-configuration.nix ./
+
+# Start NixOS Install
+nixos-install --flake ./#common
